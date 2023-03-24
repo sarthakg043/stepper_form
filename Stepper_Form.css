@@ -1,0 +1,176 @@
+
+body{
+	margin: 0;
+	padding: 0;
+	background: url("bg.jpg") center no-repeat;
+	/*Image taken from https://wallpaperaccess.com/full/31386.jpg*/
+	
+	background-size: cover;
+	font-family: sans-serif;
+	font-size: 16px;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	/*Variables*/
+	--theme-color: #fa447a;
+	--theme-color-transparent: #fa447a5d;
+}
+
+.box{
+	width: 400px; 
+	padding: 40px;
+	background-color: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	border-radius: 10px;
+}
+.box:last-of-type{
+	display: none;
+	justify-content: center;
+	align-items: center;
+	height: 250px;
+	width: 250px;
+	border-radius: 150px;
+}
+
+.box h2{
+	margin: 0 0 30px;
+	padding: 0;
+	color: var(--theme-color);
+	text-align: center;
+}
+.box h2:last-child{
+	margin: 0;
+}
+
+.box .inputBox{
+	position: relative;
+}
+
+.box .inputBox input{
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	letter-spacing: 1px;
+	margin-bottom: 30px;
+	border: none;
+	outline: none;
+	background: transparent;
+	transition: .5s;
+}
+.box .inputBox input:focus{
+	animation: expand .8s;
+	width: 100%;
+	border-bottom: 1px solid var(--theme-color);
+}
+.box .inputBox input:valid{
+	width: 100%;
+	border-bottom: 1px solid var(--theme-color);
+}
+@keyframes expand{
+	from{
+		width: 0%;
+		border-bottom: 1px solid var(--theme-color);
+	}
+	to{
+		width: 100%;
+		border-bottom: 1px solid var(--theme-color);
+	}
+}
+@keyframes fadeOut{
+	from{
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
+		display: none;
+	}
+}
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+		display: grid;
+	}
+}
+
+.box .inputBox label{
+	position: absolute;
+	top: 0;
+	left: 0;
+	letter-spacing: 1px;
+	padding: 10px 0;
+	font-size: 16px;
+	color: var(--theme-color);
+	pointer-events: none;
+	transition: .5s;
+}
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label{
+	top: -18px;
+	left: 0;
+	color: var(--theme-color);
+	font-size: 12px;
+}
+
+.box .buttonSection{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.box #firstButtonSection{
+	justify-content: flex-end;
+}
+.box button{
+	background-color: transparent;
+	font-size: 1.5rem;
+	width: 30%;
+	margin: 0;
+	padding: 7.5px 0;
+    border: 1px solid var(--theme-color);
+    border-radius: 20px;
+	outline: none;
+	color: var(--theme-color);
+	cursor: pointer;
+	transition: .2s;
+	align-self: center;
+}
+.box button:hover{
+    color: white;
+    background-color: var(--theme-color-transparent);
+    border-color: var(--theme-color-transparent);
+}
+.box button:active{
+	background-color: cyan;
+	border-color: cyan;
+}
+.box .buttonSection .previousButton{
+	width: 40%;
+}
+.box .buttonSection #submitButton{
+	width: 35%;
+}
+.box{
+	display: none;
+}
+.box:nth-of-type(1){
+    display: grid;
+}
+.inputBox input[type="date"]{
+    color: transparent;
+    animation: none;
+}
+.inputBox input[type="date"]:active{
+    color: white;
+}
+.inputBox input[type="date"]:focus{
+    color: white;
+}
+.inputBox input[type="date"]:valid{
+    color: white;
+}
